@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vite.dev/config/
+// 測試用配置 - 如果當前設定不工作，可以嘗試這個
 export default defineConfig({
   plugins: [vue()],
-  // GitHub Pages base path: https://junhoulin.github.io/website/
-  base: process.env.NODE_ENV === 'production' ? '/website/' : '/',
+  // 嘗試不同的base設定
+  base: process.env.NODE_ENV === 'production' ? './' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -18,5 +18,8 @@ export default defineConfig({
         }
       }
     }
+  },
+  optimizeDeps: {
+    include: ['primeicons']
   }
 })
