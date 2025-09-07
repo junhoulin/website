@@ -150,31 +150,41 @@
 import { ref } from 'vue'
 import Header from '../components/Header.vue'
 
+// 導入圖片
+import img111a from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
+import img221a from '../assets/img/04.商品圖片/200手鍊/220鍊式手鍊/221/221a.webp'
+import img311a from '../assets/img/04.商品圖片/300戒指/310層疊混搭/311/311a.webp'
+import img231a from '../assets/img/04.商品圖片/200手鍊/230滿鑽手鍊/231a.webp'
+import imgR1004 from '../assets/img/03.shop-banner/R1004/R1004-1.jpg'
+import imgB1024 from '../assets/img/03.shop-banner/B1024/B1024.jpg'
+import imgN0338 from '../assets/img/03.shop-banner/N0338/N0338.jpg'
+import imgCHN0079 from '../assets/img/02.banner/CHN0079-2.jpg'
+
 // 響應式數據
 const featuredProducts = ref([
   {
     id: 1,
     name: '優雅珍珠項鍊',
     price: '2,880',
-    image: '/src/assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
+    image: img111a
   },
   {
     id: 2,
     name: '經典金手鍊',
     price: '1,680',
-    image: '/src/assets/img/04.商品圖片/200手鍊/220鍊式手鍊/221/221a.webp'
+    image: img221a
   },
   {
     id: 3,
     name: '時尚鑽石戒指',
     price: '3,200',
-    image: '/src/assets/img/04.商品圖片/300戒指/310層疊混搭/311/311a.webp'
+    image: img311a
   },
   {
     id: 4,
     name: '精緻耳環套組',
     price: '1,280',
-    image: '/src/assets/img/04.商品圖片/200手鍊/230滿鑽手鍊/231a.webp'
+    image: img231a
   }
 ])
 
@@ -183,25 +193,25 @@ const categories = ref([
     id: 1,
     name: '項鍊系列',
     count: 45,
-    image: '/src/assets/img/03.shop-banner/R1004/R1004-1.jpg'
+    image: imgR1004
   },
   {
     id: 2,
     name: '手鍊系列',
     count: 32,
-    image: '/src/assets/img/03.shop-banner/B1024/B1024.jpg'
+    image: imgB1024
   },
   {
     id: 3,
     name: '戒指系列',
     count: 28,
-    image: '/src/assets/img/03.shop-banner/N0338/N0338.jpg'
+    image: imgN0338
   },
   {
     id: 4,
     name: '耳環系列',
     count: 36,
-    image: '/src/assets/img/02.banner/CHN0079-2.jpg'
+    image: imgCHN0079
   }
 ])
 </script>

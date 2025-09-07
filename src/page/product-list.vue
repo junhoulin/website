@@ -268,6 +268,17 @@ const categories = ref([
   { id: 'anklets', name: '腳鍊系列' }
 ])
 
+// 導入圖片
+import img111a from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
+import img221a from '../assets/img/04.商品圖片/200手鍊/220鍊式手鍊/221/221a.webp'
+import img311a from '../assets/img/04.商品圖片/300戒指/310層疊混搭/311/311a.webp'
+import img231a from '../assets/img/04.商品圖片/200手鍊/230滿鑽手鍊/231a.webp'
+import img121a from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121a.webp'
+import img222a from '../assets/img/04.商品圖片/200手鍊/220鍊式手鍊/222/222a.webp'
+import imgR202901 from '../assets/img/04.商品圖片/300戒指/340素面戒指/R2029/R202901.webp'
+import img621a from '../assets/img/04.商品圖片/600手腳鍊/620腳鍊/621/621a.webp'
+import img241a from '../assets/img/04.商品圖片/200手鍊/240珍珠-晶石手鍊/241/241a.webp'
+
 const products = ref([
   {
     id: 1,
@@ -275,7 +286,7 @@ const products = ref([
     category: '項鍊系列',
     price: 2880,
     material: 'pearl',
-    image: '/src/assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp',
+    image: img111a,
     isNew: true
   },
   {
@@ -284,7 +295,7 @@ const products = ref([
     category: '手鍊系列',
     price: 1680,
     material: 'gold',
-    image: '/src/assets/img/04.商品圖片/200手鍊/220鍊式手鍊/221/221a.webp',
+    image: img221a,
     isNew: false
   },
   {
@@ -293,7 +304,7 @@ const products = ref([
     category: '戒指系列',
     price: 3200,
     material: 'diamond',
-    image: '/src/assets/img/04.商品圖片/300戒指/310層疊混搭/311/311a.webp',
+    image: img311a,
     isNew: true
   },
   {
@@ -302,7 +313,7 @@ const products = ref([
     category: '耳環系列',
     price: 1280,
     material: 'silver',
-    image: '/src/assets/img/04.商品圖片/200手鍊/230滿鑽手鍊/231a.webp',
+    image: img231a,
     isNew: false
   },
   {
@@ -311,7 +322,7 @@ const products = ref([
     category: '項鍊系列',
     price: 2200,
     material: 'crystal',
-    image: '/src/assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121a.webp',
+    image: img121a,
     isNew: false
   },
   {
@@ -320,7 +331,7 @@ const products = ref([
     category: '手鍊系列',
     price: 4500,
     material: 'gold',
-    image: '/src/assets/img/04.商品圖片/200手鍊/220鍊式手鍊/222/222a.webp',
+    image: img222a,
     isNew: true
   },
   {
@@ -329,7 +340,7 @@ const products = ref([
     category: '戒指系列',
     price: 1800,
     material: 'pearl',
-    image: '/src/assets/img/04.商品圖片/300戒指/340素面戒指/R2029/R202901.webp',
+    image: imgR202901,
     isNew: false
   },
   {
@@ -338,7 +349,7 @@ const products = ref([
     category: '腳鍊系列',
     price: 950,
     material: 'silver',
-    image: '/src/assets/img/04.商品圖片/600手腳鍊/620腳鍊/621/621a.webp',
+    image: img621a,
     isNew: false
   },
   {
@@ -347,7 +358,7 @@ const products = ref([
     category: '手鍊系列',
     price: 1500,
     material: 'crystal',
-    image: '/src/assets/img/04.商品圖片/200手鍊/240珍珠-晶石手鍊/241/241a.webp',
+    image: img241a,
     isNew: false
   }
 ])
