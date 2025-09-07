@@ -54,49 +54,61 @@
           <!-- 分類篩選 -->
           <div class="filter-group">
             <label class="filter-label">商品分類</label>
-            <select v-model="selectedCategory" @change="applyFilters" class="filter-select">
-              <option value="">全部分類</option>
-              <option v-for="category in categories" :key="category.id" :value="category.id">
-                {{ category.name }}
-              </option>
-            </select>
+            <div class="select-wrapper">
+              <select v-model="selectedCategory" @change="applyFilters" class="filter-select">
+                <option value="">全部分類</option>
+                <option v-for="category in categories" :key="category.id" :value="category.id">
+                  {{ category.name }}
+                </option>
+              </select>
+              <div class="select-arrow">▼</div>
+            </div>
           </div>
 
           <!-- 價格篩選 -->
           <div class="filter-group">
             <label class="filter-label">價格範圍</label>
-            <select v-model="selectedPriceRange" @change="applyFilters" class="filter-select">
-              <option value="">全部價格</option>
-              <option value="0-1000">NT$ 0 - 1,000</option>
-              <option value="1000-3000">NT$ 1,000 - 3,000</option>
-              <option value="3000-5000">NT$ 3,000 - 5,000</option>
-              <option value="5000+">NT$ 5,000 以上</option>
-            </select>
+            <div class="select-wrapper">
+              <select v-model="selectedPriceRange" @change="applyFilters" class="filter-select">
+                <option value="">全部價格</option>
+                <option value="0-1000">NT$ 0 - 1,000</option>
+                <option value="1000-3000">NT$ 1,000 - 3,000</option>
+                <option value="3000-5000">NT$ 3,000 - 5,000</option>
+                <option value="5000+">NT$ 5,000 以上</option>
+              </select>
+              <div class="select-arrow">▼</div>
+            </div>
           </div>
 
           <!-- 材質篩選 -->
           <div class="filter-group">
             <label class="filter-label">材質</label>
-            <select v-model="selectedMaterial" @change="applyFilters" class="filter-select">
-              <option value="">全部材質</option>
-              <option value="gold">18K金</option>
-              <option value="silver">925銀</option>
-              <option value="pearl">珍珠</option>
-              <option value="diamond">鑽石</option>
-              <option value="crystal">水晶</option>
-            </select>
+            <div class="select-wrapper">
+              <select v-model="selectedMaterial" @change="applyFilters" class="filter-select">
+                <option value="">全部材質</option>
+                <option value="gold">18K金</option>
+                <option value="silver">925銀</option>
+                <option value="pearl">珍珠</option>
+                <option value="diamond">鑽石</option>
+                <option value="crystal">水晶</option>
+              </select>
+              <div class="select-arrow">▼</div>
+            </div>
           </div>
 
           <!-- 排序 -->
           <div class="filter-group">
             <label class="filter-label">排序方式</label>
-            <select v-model="sortBy" @change="applySorting" class="filter-select">
-              <option value="default">預設排序</option>
-              <option value="price-low">價格：低到高</option>
-              <option value="price-high">價格：高到低</option>
-              <option value="name">名稱：A到Z</option>
-              <option value="newest">最新上架</option>
-            </select>
+            <div class="select-wrapper">
+              <select v-model="sortBy" @change="applySorting" class="filter-select">
+                <option value="default">預設排序</option>
+                <option value="price-low">價格：低到高</option>
+                <option value="price-high">價格：高到低</option>
+                <option value="name">名稱：A到Z</option>
+                <option value="newest">最新上架</option>
+              </select>
+              <div class="select-arrow">▼</div>
+            </div>
           </div>
 
           <!-- 清除篩選 -->
@@ -836,8 +848,26 @@ onBeforeUnmount(() => {
       }
     }
     
+    .select-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .select-arrow {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: $text-dark;
+      font-size: 12px;
+      z-index: 1;
+    }
+    
     .filter-select {
       padding: $spacing-md $spacing-lg;
+      padding-right: 40px;
       border: none;
       border-bottom: 2px solid #e0e0e0;
       background: transparent;
@@ -846,6 +876,11 @@ onBeforeUnmount(() => {
       transition: all 0.3s ease;
       font-weight: 500;
       position: relative;
+      color: $text-dark !important;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 100%;
       
       &:focus {
         outline: none;
@@ -857,6 +892,11 @@ onBeforeUnmount(() => {
       &:hover {
         border-bottom-color: $primary-color;
         background: rgba(212, 175, 55, 0.03);
+      }
+      
+      option {
+        color: $text-dark !important;
+        background: white !important;
       }
     }
   }

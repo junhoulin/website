@@ -187,10 +187,15 @@ const closeMenu = () => {
       padding: $spacing-sm;
       border-radius: 50%;
       transition: all 0.3s ease;
+      color: $text-dark !important;
       
       &:hover {
         background-color: $bg-light;
         transform: scale(1.1);
+      }
+      
+      i {
+        color: $text-dark !important;
       }
     }
     
