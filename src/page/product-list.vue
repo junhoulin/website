@@ -16,7 +16,7 @@
           <div class="banner-overlay"></div>
         </div>
         <div class="banner-slide">
-          <img src="../assets/img/02.banner/CHN0090 studio (3).jpg" alt="時尚飾品" class="banner-img">
+          <img src="../assets/img/02.banner/mama1.jpg" alt="時尚飾品" class="banner-img">
           <div class="banner-overlay"></div>
         </div>
       </div>

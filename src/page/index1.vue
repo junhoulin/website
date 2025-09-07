@@ -646,7 +646,6 @@ const categories = ref([
   
   .footer-section {
     .footer-logo {
-      margin-top: 22px;
       display: flex;
       align-items: center;
       gap: $spacing-sm;
