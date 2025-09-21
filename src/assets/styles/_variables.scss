@@ -1,22 +1,25 @@
 // 全域 SCSS 變數 - 飾品購物網站主題
-// 主色調 - 優雅的金色系
-$primary-color: #d4af37; // 經典金色
-$primary-hover: #b8941f; // 深金色
-$primary-light: #f4e4a6; // 淺金色
-$secondary-color: #8b4513; // 深棕色
-$accent-color: #c0c0c0; // 銀色
+// 字體設定
+$font-family: "Jost", sans-serif;
+
+// 主色調 - 優雅的粉紅色系
+$primary-color: #DC9EA5; // 主粉紅色
+$primary-hover: #C88A92; // 深粉紅色
+$primary-light: #F2D7D9; // 淺粉紅色
+$secondary-color: #B87A82; // 深粉紅色
+$accent-color: #E8C5C9; // 淺粉紅色
 
 // 中性色調
 $text-dark: #2c2c2c; // 深灰黑
 $text-light: #666666; // 中灰
 $text-muted: #999999; // 淺灰
-$text-gold: #d4af37; // 金色文字
+$text-gold: #DC9EA5; // 粉紅色文字
 
 // 背景顏色
 $bg-light: #fafafa; // 淺灰背景
 $bg-white: #ffffff; // 純白
 $bg-cream: #fdf6e3; // 奶油色
-$bg-gold: #faf7f0; // 淺金色背景
+$bg-gold: #F8F0F1; // 淺粉紅色背景
 
 // 間距變數
 $spacing-xs: 0.25rem;

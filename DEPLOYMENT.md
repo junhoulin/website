@@ -90,3 +90,17 @@ chmod +x fix-build.sh
 npm run build
 npm run preview
 ```
+// 主色調 - 優雅的粉紅色系
+$primary-color: #DC9EA5; // 
+// 背景顏色
+$bg-light: #fafafa; // 淺灰背景
+$bg-white: #ffffff; // 純白
+
+header要有購物車
+logo 是 JhuangShih
+導航要有 首頁 商品 批發 聯絡我們 關於我們
+
+然後滿版 banner
+
+再來就是一些首頁該有的東西  然後 要有高貴 時尚的感覺  
+我要幫別人做美式的珠寶販售網站  他喜歡白底設計

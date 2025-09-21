@@ -1,76 +1,108 @@
 <template>
   <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <img src="../assets/img/01.logo/logo.png" alt="妝飾" class="logo-img">
-          <span class="logo-text">妝飾</span>
-        </div>
-        
-        <!-- 桌面版導航 -->
-        <nav class="main-nav desktop-nav">
-          <router-link to="/" class="nav-item">首頁</router-link>
-          <router-link to="/products" class="nav-item">商品列表</router-link>
-          <a href="#" class="nav-item">關於我們</a>
-        </nav>
-        
-        <div class="header-actions">
-          <button class="cart-btn">
-            <i class="pi pi-shopping-cart"></i>
-          </button>
-          
-          <!-- 漢堡包按鈕 -->
-          <button class="hamburger" @click="toggleMenu" :class="{ active: isMenuOpen }">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+    <div class="offer" ref="offer">
+      <p>FINAL CLEARANCE: <span class="font-semibold">Take 20% off</span> 'Sale <span class="font-semibold">{{
+        promo_code }}</span>'</p>
+      <button class="close-btn" @click="closeOffer()">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+
+    <MobileMenu 
+      ref="myMobileMenu" 
+      :isOpen="mobileMenuOpen"
+      @close="closeMobileMenu"
+    />
+
+    <div class="top-header-container" :class="{ scrolled }">
+      <div class="top-header">
+        <div class="header-content">
+          <div class="left-section">
+            <i class="pi pi-bars mobile-menu-btn" @click="openMobileNav()"></i>
+          </div>
+          <div class="logo" ref="myLogo">
+            <h1>JhuangShih</h1>
+          </div>
+          <div class="right-side-header">
+            <div class="cart-side" @click="openCart">
+              <i class="pi pi-shopping-cart"></i>
+              <span v-if="cartItemCount > 0" class="cart-badge">{{ cartItemCount }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
-    <!-- 手機版選單 -->
-    <div class="mobile-menu" :class="{ active: isMenuOpen }">
-      <div class="mobile-menu-content">
-        <nav class="mobile-nav">
-          <router-link to="/" class="mobile-nav-item" @click="closeMenu">
-            <i class="pi pi-home"></i>
-            <span>首頁</span>
-          </router-link>
-          <router-link to="/products" class="mobile-nav-item" @click="closeMenu">
-            <i class="pi pi-th-large"></i>
-            <span>商品列表</span>
-          </router-link>
-          <a href="#" class="mobile-nav-item" @click="closeMenu">
-            <i class="pi pi-info-circle"></i>
-            <span>關於我們</span>
-          </a>
-        </nav>
-        
-        <!-- <div class="mobile-menu-footer">
-          <button class="mobile-cart-btn">
-            <i class="pi pi-shopping-cart"></i>
-            <span>購物車</span>
-          </button>
-        </div> -->
-      </div>
+
+    <!-- Desktop Menu -->
+    <div class="desktop-menu">
+      <ul class="menu-list">
+        <li>
+          <router-link to="/">首頁</router-link>
+        </li>
+        <li>商品</li>
+        <li>批發</li>
+        <li>聯絡我們</li>
+        <li>關於我們</li>
+      </ul>
     </div>
+
+    <!-- 購物車組件 -->
+    <Cart :isOpen="cartOpen" @close="closeCart" />
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue';
+import { RouterLink } from 'vue-router';
+import MobileMenu from './MobileMenu.vue';
+import Cart from './Cart.vue';
 
-// 響應式數據
-const isMenuOpen = ref(false)
+const scrolled = ref('');
+const handleScroll = () => {
+  if (window.scrollY > 20) {
+    scrolled.value = 'fixed_header';
+  } else {
+    scrolled.value = '';
+  }
+};
 
-// 方法
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+const myLogo = ref('');
+const myMobileMenu = ref('');
+
+// 購物車狀態
+const cartOpen = ref(false);
+const cartItemCount = ref(3); // 模擬購物車商品數量
+
+// 手機選單狀態
+const mobileMenuOpen = ref(false);
+
+const openMobileNav = () => {
+  mobileMenuOpen.value = true;
 }
 
-const closeMenu = () => {
-  isMenuOpen.value = false
+const closeMobileMenu = () => {
+  mobileMenuOpen.value = false;
+}
+
+const openCart = () => {
+  cartOpen.value = true;
+}
+
+const closeCart = () => {
+  cartOpen.value = false;
+}
+
+const offer = ref('');
+const promo_code = 'Must-Haves';
+
+const closeOffer = () => {
+  if (offer.value) {
+    offer.value.classList.add('!hidden');
+  }
 }
 </script>
 
@@ -78,328 +110,260 @@ const closeMenu = () => {
 @use '../assets/styles/_variables.scss' as *;
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  position: relative;
+  background: white;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  // 容器樣式
-    .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 $spacing-lg;
+  .offer {
+    display: none;
+    background-color: #DC9EA5;
+    padding: 0.75rem 0;
+    position: relative;
+    text-align: center;
+
+    @media (min-width: 640px) {
+      display: block;
     }
 
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: $spacing-md 0;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: $spacing-sm;
-    
-    .logo-img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-    
-    .logo-text {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: $text-dark;
-    }
-  }
-  
-  .main-nav {
-    display: flex;
-    align-items: center;
-    gap: $spacing-xl;
-    
-    .nav-item {
-      color: $text-dark;
-      text-decoration: none;
+    p {
+      margin: 0;
+      color: white;
+      font-size: 0.875rem;
       font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
-      
-      &:hover {
-        color: $primary-color;
+
+      .font-semibold {
+        font-weight: 600;
       }
     }
-    
-    .nav-dropdown {
-      position: relative;
-      
-      &:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      
-      .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        border-radius: $border-radius;
-        box-shadow: $shadow-lg;
-        padding: $spacing-sm 0;
-        min-width: 200px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        
-        .dropdown-item {
-          display: block;
-          padding: $spacing-sm $spacing-md;
-          color: $text-dark;
-          text-decoration: none;
-          transition: background-color 0.3s ease;
-          
-          &:hover {
-            background-color: $bg-light;
-          }
-        }
-      }
-    }
-  }
-  
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: $spacing-md;
-    
-    .cart-btn {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: $spacing-sm;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      color: $text-dark !important;
-      
-      &:hover {
-        background-color: $bg-light;
-        transform: scale(1.1);
-      }
-      
-      i {
-        color: $text-dark !important;
-      }
-    }
-    
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 24px;
-      height: 18px;
+
+    .close-btn {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.75rem;
       background: none;
       border: none;
       cursor: pointer;
       padding: 0;
-      z-index: 1001;
-      
-      span {
-        display: block;
-        height: 2px;
-        width: 100%;
-        background: $text-dark;
-        border-radius: 2px;
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transform-origin: center;
-      }
-      
-      &.active {
-        span {
-          &:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-          }
-          
-          &:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-          }
-          
-          &:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-          }
-        }
-      }
-    }
-  }
-}
+      margin: 0;
 
-// 手機版選單樣式
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    
-    .mobile-menu-content {
-      transform: translateY(0);
-    }
-  }
-  
-  .mobile-menu-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    padding: 80px $spacing-lg $spacing-xl;
-    transform: translateY(-100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  .mobile-nav {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-sm;
-    margin-bottom: $spacing-xxl;
-    
-    .mobile-nav-item {
-      display: flex;
-      align-items: center;
-      gap: $spacing-md;
-      padding: $spacing-lg;
-      color: $text-dark;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1rem;
-      border-radius: $border-radius-lg;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      
       i {
-        font-size: 1.2rem;
-        color: $primary-color;
-        transition: all 0.3s ease;
-      }
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba($primary-color, 0.1), transparent);
-        transition: left 0.5s ease;
-      }
-      
-      &:hover {
-        background: rgba($primary-color, 0.05);
-        transform: translateX(10px);
-        
-        i {
-          transform: scale(1.2);
-        }
-        
-        &::before {
-          left: 100%;
-        }
-      }
-      
-      &.router-link-active {
-        background: rgba($primary-color, 0.1);
-        color: $primary-color;
-        
-        i {
-          color: $primary-color;
+        font-size: 1.5rem;
+        color: #494848;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #1d1d1d;
         }
       }
     }
   }
-  
-  .mobile-menu-footer {
-    .mobile-cart-btn {
+
+  .top-header-container {
+    padding: 0.75rem 0;
+    transition: all 0.3s ease;
+
+    @media (min-width: 1024px) {
+      padding: 1.75rem 0;
+    }
+
+    &.scrolled {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+
+      @media (min-width: 1280px) {
+        padding: 0;
+      }
+
+      .header-content {
+        padding: 0 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: white;
+        margin-bottom: 0.5rem;
+
+        @media (min-width: 1280px) {
+          padding: 0;
+        }
+      }
+
+      .left-section {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        .mobile-menu-btn {
+          font-size: 1.25rem;
+          cursor: pointer;
+          transition: color 0.3s ease;
+          font-weight: 400;
+
+          &:hover {
+            color: $primary-color;
+          }
+
+          @media (min-width: 1024px) {
+            display: none;
+          }
+
+          @media (max-width: 640px) {
+            font-size: 1.125rem;
+          }
+        }
+      }
+
+      .logo {
+        h1 {
+          font-family: $font-family;
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: #222222;
+          letter-spacing: 0.05em;
+          margin: 0;
+          line-height: 1;
+          transition: all 0.3s ease;
+          text-decoration: none;
+
+          @media (max-width: 640px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          margin-left: 4rem;
+        }
+      }
+
+      .right-side-header {
+        display: flex;
+        gap: 1rem;
+
+        .cart-side {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          transition: all 0.3s ease;
+          position: relative;
+
+          &:hover {
+            color: $primary-color;
+          }
+
+          i {
+            font-size: 1.25rem;
+            font-weight: 400;
+
+            @media (max-width: 640px) {
+              font-size: 1.125rem;
+            }
+          }
+
+          .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: $primary-color;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 500;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            padding: 0 0.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+
+          span {
+            font-size: 1.125rem;
+            padding: 0 0.5rem;
+            display: none;
+
+            @media (min-width: 1024px) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .desktop-menu {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
+
+    .menu-list {
       display: flex;
+      gap: 3rem;
       align-items: center;
       justify-content: center;
-      gap: $spacing-sm;
-      padding: $spacing-lg;
-      background: linear-gradient(135deg, $primary-color 0%, $primary-hover 100%);
-      color: white;
-      border: none;
-      border-radius: $border-radius-lg;
-      font-weight: 600;
-      font-size: 1.1rem;
+      padding: 1rem 0;
+      font-size: 1.25rem;
+      font-weight: 300;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba($primary-color, 0.3);
-      
-      i {
-        font-size: 1.2rem;
-      }
-      
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba($primary-color, 0.4);
-      }
-      
-      &:active {
-        transform: translateY(0);
+      list-style: none;
+      margin: 0;
+
+      li {
+        position: relative;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          transition: color 0.3s ease;
+          font-weight: 300;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
       }
     }
   }
 }
 
 // 響應式設計
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .header {
-    .header-content {
-      .desktop-nav {
-        display: none;
-      }
-    }
-    
-    .header-actions {
-      .hamburger {
-        display: flex;
-      }
+    .offer {
+      display: none;
     }
   }
 }
 
-@media (max-width: 480px) {
-  .mobile-menu {
-    .mobile-menu-content {
-      padding: 60px $spacing-md $spacing-lg;
-    }
-    
-    .mobile-nav {
-      .mobile-nav-item {
-        padding: $spacing-md;
-        font-size: 1rem;
-      }
+@media (max-width: 1024px) {
+  .header {
+    .desktop-menu {
+      display: none;
     }
   }
+}
+
+// 隱藏樣式
+.hidden {
+  display: none !important;
 }
 </style>
