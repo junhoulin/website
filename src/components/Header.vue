@@ -39,10 +39,18 @@
         <li>
           <router-link to="/">首頁</router-link>
         </li>
-        <li>商品</li>
-        <li>批發</li>
-        <li>聯絡我們</li>
-        <li>關於我們</li>
+        <li>
+          <router-link to="/product-list">商品列表</router-link>
+        </li>
+        <li>
+          <router-link to="/wholesale">批發專區</router-link>
+        </li>
+        <li>
+          <router-link to="/brand">品牌專區</router-link>
+        </li>
+        <li>
+          <router-link to="/contact">聯絡我們</router-link>
+        </li>
       </ul>
     </div>
 

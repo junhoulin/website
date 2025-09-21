@@ -20,9 +20,24 @@ const routes = [
     component: Shop
   },
   {
-    path: '/products',
+    path: '/product-list',
     name: 'ProductList',
     component: ProductList
+  },
+  {
+    path: '/wholesale',
+    name: 'Wholesale',
+    component: () => import('../page/wholesale.vue')
+  },
+  {
+    path: '/brand',
+    name: 'Brand',
+    component: () => import('../page/brand.vue')
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../page/contact.vue')
   }
 ]
 

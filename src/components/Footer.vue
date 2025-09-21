@@ -12,18 +12,17 @@
           </p>
         </div>
         <div class="footer-section">
-          <h4 class="footer-title">快速連結</h4>
+          <h4 class="footer-title">客戶服務</h4>
           <ul class="footer-links">
-            <li><a href="#about">關於我們</a></li>
             <li><a href="#contact">聯絡我們</a></li>
             <li><a href="#shipping">運送資訊</a></li>
             <li><a href="#returns">退換貨政策</a></li>
           </ul>
         </div>
         <div class="footer-section">
-          <h4 class="footer-title">客戶服務</h4>
+          <h4 class="footer-title">關於我們</h4>
           <ul class="footer-links">
-            <li><a href="#faq">常見問題</a></li>
+            <li><a href="#about">品牌故事</a></li>
             <li><a href="#size-guide">尺寸指南</a></li>
             <li><a href="#care">保養說明</a></li>
             <li><a href="#warranty">保固服務</a></li>
@@ -40,7 +39,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 妝飾. 版權所有</p>
+        <p>Copyright © 2025 JhuangShih All Rights Reserved</p>
       </div>
     </div>
   </footer>

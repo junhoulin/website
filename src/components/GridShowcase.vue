@@ -9,16 +9,12 @@
     <!-- 珠寶展示網格區域 -->
     <div class="showcase-grid">
       
-      <!-- 主要展示項目 - 項鍊系列 -->
+      <!-- 項鍊系列 -->
       <div class="showcase-item showcase-item--featured">
         <div class="showcase-card">
-          <img :src="necklaceImage" alt="精緻項鍊系列" class="showcase-image">
+          <img :src="necklaceImage" alt="項鍊系列" class="showcase-image">
           <div class="showcase-content">
-            <h4 class="showcase-subtitle">2024 春季新品</h4>
-            <h1 class="showcase-title">精緻項鍊系列</h1>
-            <a href="#" class="showcase-button">
-              查看更多
-            </a>
+            <h1 class="showcase-title">項鍊</h1>
           </div>
         </div>
       </div>
@@ -26,56 +22,49 @@
       <!-- 手鍊展示 -->
       <div class="showcase-item showcase-item--secondary">
         <div class="showcase-card">
-          <img :src="braceletImage" alt="優雅手鍊系列" class="showcase-image">
-          <div class="showcase-content showcase-content--left">
-            <h1 class="showcase-title showcase-title--small">鑽石手鍊<br>精選系列</h1>
-            <a href="#" class="showcase-button">查看更多</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 戒指展示 -->
-      <div class="showcase-item showcase-item--tertiary">
-        <div class="showcase-card">
-          <img :src="ringImage" alt="時尚戒指系列" class="showcase-image">
-          <div class="showcase-content showcase-content--left">
-            <h1 class="showcase-title showcase-title--small">時尚戒指<br>精選系列</h1>
-            <a href="#" class="showcase-button">查看更多</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 耳環展示 -->
-      <div class="showcase-item showcase-item--quaternary">
-        <div class="showcase-card">
-          <img :src="earringImage" alt="優雅耳環系列" class="showcase-image">
-          <div class="showcase-content showcase-content--left">
-            <h1 class="showcase-title showcase-title--small">優雅耳環<br>精選系列</h1>
-            <a href="#" class="showcase-button">查看更多</a>
+          <img :src="braceletImage" alt="手鍊系列" class="showcase-image">
+          <div class="showcase-content">
+            <h1 class="showcase-title">手鍊</h1>
           </div>
         </div>
       </div>
 
       <!-- 手腳鍊展示 -->
-      <div class="showcase-item showcase-item--quinary">
+      <div class="showcase-item showcase-item--tertiary">
         <div class="showcase-card">
-          <img :src="ankletImage" alt="精緻手腳鍊系列" class="showcase-image">
-          <div class="showcase-content showcase-content--bottom">
-            <h4 class="showcase-subtitle">全新系列</h4>
-            <h1 class="showcase-title showcase-title--small">精緻手腳鍊<br>精選系列</h1>
-            <a href="#" class="showcase-button">查看更多</a>
+          <img :src="ankletImage" alt="手腳鍊系列" class="showcase-image">
+          <div class="showcase-content">
+            <h1 class="showcase-title">手腳鍊</h1>
           </div>
         </div>
       </div>
 
-      <!-- 特價商品展示 -->
+      <!-- 戒指展示 -->
+      <div class="showcase-item showcase-item--quaternary">
+        <div class="showcase-card">
+          <img :src="ringImage" alt="戒指系列" class="showcase-image">
+          <div class="showcase-content">
+            <h1 class="showcase-title">戒指</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- 耳環展示 -->
+      <div class="showcase-item showcase-item--quinary">
+        <div class="showcase-card">
+          <img :src="earringImage" alt="耳環系列" class="showcase-image">
+          <div class="showcase-content">
+            <h1 class="showcase-title">耳環</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- 精選商品展示 -->
       <div class="showcase-item showcase-item--senary">
         <div class="showcase-card">
-          <img :src="saleImage" alt="特價商品系列" class="showcase-image">
-          <div class="showcase-content showcase-content--bottom">
-            <h4 class="showcase-subtitle">限時優惠</h4>
-            <h1 class="showcase-title showcase-title--small">特價商品<br>精選系列</h1>
-            <a href="#" class="showcase-button">查看更多</a>
+          <img :src="saleImage" alt="精選商品系列" class="showcase-image">
+          <div class="showcase-content">
+            <h1 class="showcase-title">精選商品</h1>
           </div>
         </div>
       </div>
@@ -132,45 +121,7 @@
   }
 }
 
-// 按鈕動畫效果
-.showcase-button {
-  position: relative;
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  letter-spacing: 0.05em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    background-color: white;
-    color: $primary-color;
-    transform: translateY(-2px);
-    box-shadow: $shadow-lg;
-    text-shadow: none;
-
-    &::before {
-      transform: translateX(0);
-    }
-  }
-}
+// 移除按鈕樣式，因為不再需要按鈕
 
 // 圖片動畫效果
 .showcase-image {
@@ -206,6 +157,15 @@
     .showcase-image {
       transform: scale(1.05);
     }
+
+    .showcase-content {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .showcase-title {
+      transform: scale(1.1);
+      color: $text-gold;
+    }
   }
 }
 
@@ -226,23 +186,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   padding: 1.5rem;
-  color: $text-dark;
+  color: white;
   z-index: 10;
-
-  &--left {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  &--bottom {
-    bottom: 0;
-    left: 50%;
-    top: auto;
-    right: auto;
-    transform: translateX(-50%);
-  }
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .showcase-subtitle {
@@ -259,8 +207,10 @@
   font-weight: 300;
   line-height: 1.2;
   margin: 0;
-  color: $text-dark;
+  color: white;
   letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 
   &--small {
     font-size: 1.5rem;
@@ -302,23 +252,6 @@
   // 手機版 showcase-content 樣式調整
   .showcase-content {
     padding: 1rem;
-    gap: 0.75rem;
-
-    &--left {
-      align-items: flex-start;
-      text-align: left;
-      padding-left: 1.5rem;
-      padding-right: 1rem;
-    }
-
-    &--bottom {
-      bottom: 1rem;
-      left: 50%;
-      top: auto;
-      right: auto;
-      transform: translateX(-50%);
-      padding: 1rem;
-    }
   }
 
   .showcase-title {
@@ -331,16 +264,6 @@
     }
   }
 
-  .showcase-subtitle {
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .showcase-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    border-width: 1px;
-  }
 }
 
 // 小手機版 (480px 以下)
@@ -350,17 +273,6 @@
   }
   .showcase-content {
     padding: 0.75rem;
-    gap: 0.5rem;
-
-    &--left {
-      padding-left: 1rem;
-      padding-right: 0.75rem;
-    }
-
-    &--bottom {
-      bottom: 0.75rem;
-      padding: 0.75rem;
-    }
   }
 
   .showcase-title {
@@ -373,15 +285,6 @@
     }
   }
 
-  .showcase-subtitle {
-    font-size: 0.7rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .showcase-button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
-  }
 }
 
 // 平板版 (768px - 1023px)
