@@ -78,18 +78,18 @@ const menuItems = ref([
     icon: "pi pi-home"
   },
   {
-    name: "商品",
-    link: "/products",
+    name: "商品列表",
+    link: "/product-list",
     icon: "pi pi-shopping-bag"
   },
   {
-    name: "批發",
+    name: "批發專區",
     link: "/wholesale",
     icon: "pi pi-briefcase"
   },
   {
-    name: "關於我們",
-    link: "/about",
+    name: "品牌專區",
+    link: "/brand",
     icon: "pi pi-info-circle"
   },
   {

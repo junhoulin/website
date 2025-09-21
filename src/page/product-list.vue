@@ -69,7 +69,10 @@
               <div class="product-image-container">
                 <img :src="product.image" :alt="product.name" class="product-image">
                 <div class="product-overlay">
-                  <button class="quick-view-btn">快速查看</button>
+                  <button class="add-to-cart-btn" @click.stop="addToCart(product)">
+                    <i class="pi pi-shopping-cart"></i>
+                    加入購物車
+                  </button>
                 </div>
               </div>
               <div class="product-info">
@@ -78,12 +81,6 @@
                 <div class="product-price">
                   <span class="current-price">${{ product.price.toLocaleString() }}</span>
                   <span v-if="product.originalPrice" class="original-price">${{ product.originalPrice.toLocaleString() }}</span>
-                </div>
-                <div class="product-actions">
-                  <button class="add-to-cart-btn" @click.stop="addToCart(product)">
-                    <i class="pi pi-shopping-cart"></i>
-                    加入購物車
-                  </button>
                 </div>
               </div>
             </div>
@@ -106,8 +103,11 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+
+const router = useRouter()
 
 // 導入商品圖片
 import product1Image from '../assets/img/02.banner/CHN0079-1.jpg'
@@ -235,8 +235,7 @@ const sortProducts = () => {
 
 // 查看商品詳情
 const viewProduct = (product) => {
-  console.log('查看商品:', product.name)
-  // 這裡可以導航到商品詳情頁
+  router.push(`/product/${product.id}`)
 }
 
 // 加入購物車
@@ -267,13 +266,13 @@ onMounted(() => {
   border-bottom: 1px solid #e9ecef;
 
   .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 1rem;
   }
 
   .page-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 300;
     color: $text-dark;
     margin: 0 0 1rem 0;
@@ -281,7 +280,7 @@ onMounted(() => {
   }
 
   .page-subtitle {
-    font-size: 1rem;
+    font-size: 0.875rem;
     color: $text-gold;
     margin: 0;
     font-weight: 300;
@@ -343,17 +342,19 @@ onMounted(() => {
 // 商品區域
 .products-section {
   padding: 3rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 
   .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 1rem;
   }
 
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 1rem 0;
   }
 }
 
@@ -361,34 +362,36 @@ onMounted(() => {
 .product-card {
   background: white;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    .product-image {
+      transform: scale(1.02);
+    }
 
     .product-overlay {
       opacity: 1;
-    }
-
-    .product-image {
-      transform: scale(1.05);
     }
   }
 }
 
 .product-image-container {
   position: relative;
-  height: 250px;
+  width: 100%;
+  height: 350px;
   overflow: hidden;
+  background: #fafafa;
 
   .product-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
   }
 
   .product-overlay {
@@ -397,26 +400,33 @@ onMounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
 
-    .quick-view-btn {
-      background: white;
+    .add-to-cart-btn {
+      background: rgba(255, 255, 255, 0.9);
       color: $text-dark;
       border: none;
       padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      font-weight: 500;
+      border-radius: 0;
+      font-weight: 300;
       cursor: pointer;
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.875rem;
 
       &:hover {
         background: $primary-color;
         color: white;
+        transform: translateY(-1px);
       }
     }
   }
@@ -424,62 +434,45 @@ onMounted(() => {
 
 .product-info {
   padding: 1.5rem;
+  text-align: center;
 
   .product-name {
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 300;
     color: $text-dark;
     margin: 0 0 0.5rem 0;
     line-height: 1.4;
+    letter-spacing: 0.05em;
   }
 
   .product-category {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: $text-gold;
     margin: 0 0 1rem 0;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
+    font-weight: 300;
   }
 
   .product-price {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 
     .current-price {
       font-size: 1.25rem;
-      font-weight: 600;
+      font-weight: 300;
       color: $text-dark;
+      letter-spacing: 0.05em;
     }
 
     .original-price {
-      font-size: 1rem;
+      font-size: 0.875rem;
       color: #999;
       text-decoration: line-through;
-    }
-  }
-
-  .product-actions {
-    .add-to-cart-btn {
-      width: 100%;
-      background: $primary-color;
-      color: white;
-      border: none;
-      padding: 0.75rem 1rem;
-      border-radius: 4px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-
-      &:hover {
-        background: darken($primary-color, 10%);
-        transform: translateY(-1px);
-      }
+      font-weight: 300;
     }
   }
 }
@@ -509,12 +502,19 @@ onMounted(() => {
 }
 
 // 響應式設計
-@media (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .page-header {
     padding: 2rem 0;
 
     .page-title {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
   }
 
@@ -534,18 +534,23 @@ onMounted(() => {
   }
 
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
   }
 
   .product-image-container {
-    height: 200px;
+    height: 280px;
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .product-image-container {
+    height: 250px;
   }
 }
 </style>
