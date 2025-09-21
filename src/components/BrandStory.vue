@@ -27,7 +27,7 @@
 
 <script setup>
 // 品牌圖片
-const brandImage = '/src/assets/img/02.banner/CHN0079-1.jpg'
+import brandImage from '../assets/img/02.banner/CHN0079-1.jpg'
 </script>
 
 <style lang="scss" scoped>

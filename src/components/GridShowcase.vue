@@ -455,10 +455,10 @@
 
 <script setup>
 // 導入圖片資源
-import necklaceImage from '@/assets/img/02.banner/CHN0079-1.jpg';
-import braceletImage from '@/assets/img/02.banner/mama1.jpg';
-import ringImage from '@/assets/img/02.banner/R1004-1.jpg';
-import earringImage from '@/assets/img/02.banner/CHN0079-2.jpg';
-import ankletImage from '@/assets/img/02.banner/BRJ1053 model.jpg';
-import saleImage from '@/assets/img/02.banner/BRJ9080.jpg';
+import necklaceImage from '../assets/img/02.banner/CHN0079-1.jpg';
+import braceletImage from '../assets/img/02.banner/mama1.jpg';
+import ringImage from '../assets/img/02.banner/R1004-1.jpg';
+import earringImage from '../assets/img/02.banner/CHN0079-2.jpg';
+import ankletImage from '../assets/img/02.banner/BRJ1053 model.jpg';
+import saleImage from '../assets/img/02.banner/BRJ9080.jpg';
 </script>

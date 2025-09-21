@@ -106,6 +106,10 @@ watch(() => props.isOpen, (isOpen) => {
 })
 
 // 購物車數據 (模擬數據)
+// 導入圖片資源
+import cartItem1Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
+import cartItem2Image from '../assets/img/04.商品圖片/200手鍊/240珍珠-晶石手鍊/241/241a.webp'
+
 const cartItems = ref([
   {
     id: 1,
@@ -114,7 +118,7 @@ const cartItems = ref([
     price: 15800,
     originalPrice: 19800,
     quantity: 1,
-    image: '/src/assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
+    image: cartItem1Image
   },
   {
     id: 2,
@@ -122,7 +126,7 @@ const cartItems = ref([
     category: '手鍊系列',
     price: 8900,
     quantity: 2,
-    image: '/src/assets/img/04.商品圖片/200手鍊/240珍珠-晶石手鍊/241/241a.webp'
+    image: cartItem2Image
   }
 ])
 

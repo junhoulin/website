@@ -38,23 +38,26 @@ import 'swiper/css/navigation'
 const modules = [Autoplay, Pagination, Navigation]
 
 // 輪播圖片數據
+// 導入圖片資源
+import bannerImage from '../assets/img/02.banner/banner1.png'
+
 const slides = ref([
   {
-    image: '/src/assets/img/02.banner/banner1.png',
+    image: bannerImage,
     alt: '珠寶首飾展示',
     title: '精緻珠寶',
     description: '展現您的獨特魅力',
     buttonText: '立即選購'
   },
   {
-    image: '/src/assets/img/02.banner/banner1.png',
+    image: bannerImage,
     alt: '時尚首飾',
     title: '時尚設計',
     description: '引領潮流風尚',
     buttonText: '了解更多'
   },
   {
-    image: '/src/assets/img/02.banner/banner1.png',
+    image: bannerImage,
     alt: '優雅首飾',
     title: '優雅品味',
     description: '彰顯您的優雅氣質',

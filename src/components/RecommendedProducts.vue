@@ -46,6 +46,14 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+// 導入圖片資源
+import product1Image from '../assets/img/02.banner/CHN0079-1.jpg'
+import product2Image from '../assets/img/02.banner/mama1.jpg'
+import product3Image from '../assets/img/02.banner/R1004-1.jpg'
+import product4Image from '../assets/img/02.banner/CHN0079-2.jpg'
+import product5Image from '../assets/img/02.banner/BRJ1053 model.jpg'
+import product6Image from '../assets/img/02.banner/BRJ9080.jpg'
+
 const router = useRouter()
 
 // 推薦商品數據
@@ -56,14 +64,14 @@ const products = ref([
     category: '項鍊系列',
     price: 15800,
     originalPrice: 19800,
-    image: '/src/assets/img/02.banner/CHN0079-1.jpg'
+    image: product1Image
   },
   {
     id: 2,
     name: '優雅珍珠手鍊',
     category: '手鍊系列',
     price: 8900,
-    image: '/src/assets/img/02.banner/mama1.jpg'
+    image: product2Image
   },
   {
     id: 3,
@@ -71,21 +79,21 @@ const products = ref([
     category: '戒指系列',
     price: 12500,
     originalPrice: 15000,
-    image: '/src/assets/img/02.banner/R1004-1.jpg'
+    image: product3Image
   },
   {
     id: 4,
     name: '精緻耳環對',
     category: '耳環系列',
     price: 6800,
-    image: '/src/assets/img/02.banner/CHN0079-2.jpg'
+    image: product4Image
   },
   {
     id: 5,
     name: '時尚手腳鍊',
     category: '手腳鍊系列',
     price: 4200,
-    image: '/src/assets/img/02.banner/BRJ1053 model.jpg'
+    image: product5Image
   },
   {
     id: 6,
@@ -93,7 +101,7 @@ const products = ref([
     category: '特價商品',
     price: 2999,
     originalPrice: 5999,
-    image: '/src/assets/img/02.banner/BRJ9080.jpg'
+    image: product6Image
   }
 ])
 

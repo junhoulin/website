@@ -4,7 +4,7 @@
       <div class="footer-content">
         <div class="footer-section">
           <div class="footer-logo">
-            <img src="../assets/img/01.logo/logo.png" alt="妝飾" class="logo-img">
+            <img :src="logoImage" alt="妝飾" class="logo-img">
             <span class="logo-text">妝飾</span>
           </div>
           <p class="footer-description">
@@ -47,7 +47,8 @@
 </template>
 
 <script setup>
-// Footer 組件不需要額外的邏輯
+// 導入圖片資源
+import logoImage from '../assets/img/01.logo/logo.png'
 </script>
 
 <style lang="scss" scoped>
