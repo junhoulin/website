@@ -22,9 +22,9 @@
       <!-- 手鍊展示 -->
       <div class="showcase-item showcase-item--secondary">
         <div class="showcase-card">
-          <img :src="braceletImage" alt="手鍊系列" class="showcase-image">
+          <img :src="braceletImage" alt="手腳鍊系列" class="showcase-image">
           <div class="showcase-content">
-            <h1 class="showcase-title">手鍊</h1>
+            <h1 class="showcase-title">手腳鍊</h1>
           </div>
         </div>
       </div>
@@ -32,9 +32,9 @@
       <!-- 手腳鍊展示 -->
       <div class="showcase-item showcase-item--tertiary">
         <div class="showcase-card">
-          <img :src="ankletImage" alt="手腳鍊系列" class="showcase-image">
+          <img :src="ankletImage" alt="戒指系列" class="showcase-image">
           <div class="showcase-content">
-            <h1 class="showcase-title">手腳鍊</h1>
+            <h1 class="showcase-title">戒指</h1>
           </div>
         </div>
       </div>
@@ -42,9 +42,9 @@
       <!-- 戒指展示 -->
       <div class="showcase-item showcase-item--quaternary">
         <div class="showcase-card">
-          <img :src="ringImage" alt="戒指系列" class="showcase-image">
+          <img :src="ringImage" alt="耳環系列" class="showcase-image">
           <div class="showcase-content">
-            <h1 class="showcase-title">戒指</h1>
+            <h1 class="showcase-title">耳環</h1>
           </div>
         </div>
       </div>
@@ -52,9 +52,9 @@
       <!-- 耳環展示 -->
       <div class="showcase-item showcase-item--quinary">
         <div class="showcase-card">
-          <img :src="earringImage" alt="耳環系列" class="showcase-image">
+          <img :src="earringImage" alt="手鍊系列" class="showcase-image">
           <div class="showcase-content">
-            <h1 class="showcase-title">耳環</h1>
+            <h1 class="showcase-title">手鍊</h1>
           </div>
         </div>
       </div>
@@ -358,10 +358,10 @@
 
 <script setup>
 // 導入圖片資源
-import necklaceImage from '../assets/img/02.banner/CHN0079-1.jpg';
-import braceletImage from '../assets/img/02.banner/mama1.jpg';
+import necklaceImage from '../assets/img/indexcategory/首頁-項鍊.webp';
+import braceletImage from '../assets/img/indexcategory/首頁-手腳鍊-1.webp';
 import ringImage from '../assets/img/02.banner/R1004-1.jpg';
-import earringImage from '../assets/img/02.banner/CHN0079-2.jpg';
+import earringImage from '../assets/img/indexcategory/首頁-手鍊.webp';
 import ankletImage from '../assets/img/02.banner/BRJ1053 model.jpg';
 import saleImage from '../assets/img/02.banner/BRJ9080.jpg';
 </script>

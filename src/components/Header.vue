@@ -46,7 +46,7 @@
           <router-link to="/wholesale">批發專區</router-link>
         </li>
         <li>
-          <router-link to="/brand">品牌專區</router-link>
+          <router-link to="/brand">品牌故事</router-link>
         </li>
         <li>
           <router-link to="/contact">聯絡我們</router-link>

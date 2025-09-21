@@ -88,7 +88,7 @@ const menuItems = ref([
     icon: "pi pi-briefcase"
   },
   {
-    name: "品牌專區",
+    name: "品牌故事",
     link: "/brand",
     icon: "pi pi-info-circle"
   },

@@ -3,12 +3,12 @@
     <!-- Header -->
     <Header />
 
-    <!-- 品牌專區主要內容 -->
+    <!-- 品牌故事主要內容 -->
     <main class="brand-main">
       <!-- 頁面標題 -->
       <section class="page-header">
         <div class="container">
-          <h1 class="page-title">品牌專區</h1>
+          <h1 class="page-title">品牌故事</h1>
           <p class="page-subtitle">探索妝飾的品牌故事與理念</p>
         </div>
       </section>
@@ -20,13 +20,16 @@
             <div class="story-text">
               <h2 class="section-title">品牌故事</h2>
               <p class="story-description">
-                妝飾成立於2020年，致力於為現代女性提供精緻優雅的珠寶首飾。
-                我們相信每一件珠寶都承載著獨特的故事，能夠展現佩戴者的個性與品味。
+                「妝飾」始於一份對「美」的執著。
               </p>
               <p class="story-description">
-                從設計到製作，我們堅持使用最優質的材料，結合傳統工藝與現代設計，
-                創造出既經典又時尚的珠寶作品。每一件作品都經過精心打磨，
-                確保為您帶來完美的佩戴體驗。
+                我們致力從美國引進設計獨特、做工精良的飾品，只因我們相信，一件好的飾品，擁有點亮平凡日常的魔力。
+              </p>
+              <p class="story-description">
+                對我們而言，飾品是您風格的最後一塊拼圖，也是自信的隱形來源。它無需喧嘩，便能悄悄訴說您的品味與講究；它細緻點綴，讓每一個上班日、每一次約會，都因這份精心而變得更加期待。
+              </p>
+              <p class="story-description">
+                「妝飾」精選的每一件作品，都承載著讓您「更喜歡自己」的期待。我們期盼成為您信賴的夥伴，在您追求美好生活的路上，用恰到好處的點綴，為您的獨特風格與生活態度，留下最閃亮的註腳。
               </p>
             </div>
             <div class="story-image">

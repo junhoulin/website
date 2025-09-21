@@ -47,12 +47,10 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 // 導入圖片資源
-import product1Image from '../assets/img/02.banner/CHN0079-1.jpg'
-import product2Image from '../assets/img/02.banner/mama1.jpg'
-import product3Image from '../assets/img/02.banner/R1004-1.jpg'
-import product4Image from '../assets/img/02.banner/CHN0079-2.jpg'
-import product5Image from '../assets/img/02.banner/BRJ1053 model.jpg'
-import product6Image from '../assets/img/02.banner/BRJ9080.jpg'
+import product1Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
+import product2Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/112/112a.webp'
+import product3Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121a.webp'
+import product4Image from '../assets/img/04.商品圖片/100項鍊/150扣環項鍊/151/151a.webp'
 
 const router = useRouter()
 
@@ -60,48 +58,31 @@ const router = useRouter()
 const products = ref([
   {
     id: 1,
-    name: '經典鑽石項鍊',
-    category: '項鍊系列',
-    price: 15800,
-    originalPrice: 19800,
+    name: '三戴式18K金 PVD不鏽鋼星月吊飾可轉換項鍊',
+    category: '項鍊',
+    price: 1800,
     image: product1Image
   },
   {
     id: 2,
-    name: '優雅珍珠手鍊',
-    category: '手鍊系列',
-    price: 8900,
+    name: '18K 金 PVD 不鏽鋼珍珠與圓片疊戴吊飾項鍊',
+    category: '項鍊',
+    price: 650,
     image: product2Image
   },
   {
     id: 3,
-    name: '時尚戒指套組',
-    category: '戒指系列',
-    price: 12500,
-    originalPrice: 15000,
+    name: '不鏽鋼 Figaro 鍊條項鍊 ',
+    category: '項鍊',
+    price: 450,
     image: product3Image
   },
   {
     id: 4,
-    name: '精緻耳環對',
-    category: '耳環系列',
-    price: 6800,
+    name: '18K金PVD不鏽鋼愛心吊飾扣頭迴紋針項鍊',
+    category: '項鍊',
+    price: 1300,
     image: product4Image
-  },
-  {
-    id: 5,
-    name: '時尚手腳鍊',
-    category: '手腳鍊系列',
-    price: 4200,
-    image: product5Image
-  },
-  {
-    id: 6,
-    name: '特價精選套組',
-    category: '特價商品',
-    price: 2999,
-    originalPrice: 5999,
-    image: product6Image
   }
 ])
 

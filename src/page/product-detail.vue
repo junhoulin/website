@@ -190,12 +190,30 @@ import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 
 // 導入商品圖片
-import product1Image from '../assets/img/02.banner/CHN0079-1.jpg'
-import product2Image from '../assets/img/02.banner/mama1.jpg'
-import product3Image from '../assets/img/02.banner/R1004-1.jpg'
-import product4Image from '../assets/img/02.banner/CHN0079-2.jpg'
-import product5Image from '../assets/img/02.banner/BRJ1053 model.jpg'
-import product6Image from '../assets/img/02.banner/BRJ9080.jpg'
+import product1Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
+import product2Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111b.webp'
+import product3Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111c.webp'
+import product4Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111d.webp'
+import product5Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111e.webp'
+import product6Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/112/112a.webp'
+import product7Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/112/112b.webp'
+import product8Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/112/112c.webp'
+import product9Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/112/112d.webp'
+import product10Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/112/112e.webp'
+import product11Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121a.webp'
+import product12Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121b.webp'
+import product13Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121c.webp'
+import product14Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121d.webp'
+import product15Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121e.webp'
+import product16Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121f.webp'
+import product17Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121g.webp'
+import product18Image from '../assets/img/04.商品圖片/100項鍊/150扣環項鍊/151/151a.webp'
+import product19Image from '../assets/img/04.商品圖片/100項鍊/150扣環項鍊/151/151b.webp'
+import product20Image from '../assets/img/04.商品圖片/100項鍊/150扣環項鍊/151/151c.webp'
+import product21Image from '../assets/img/04.商品圖片/100項鍊/150扣環項鍊/151/151d.webp'
+import product22Image from '../assets/img/04.商品圖片/100項鍊/150扣環項鍊/151/151e.webp'
+import product23Image from '../assets/img/04.商品圖片/100項鍊/150扣環項鍊/151/151f.webp'
+
 
 const route = useRoute()
 const router = useRouter()
@@ -204,134 +222,74 @@ const router = useRouter()
 const products = ref([
   {
     id: 1,
-    name: '精緻鑽石項鍊',
+    name: '三戴式18K金 PVD不鏽鋼星月吊飾可轉換項鍊',
     category: '項鍊',
-    price: 2500,
-    originalPrice: 3000,
-    discount: 17,
+    price: 1600,
     image: product1Image,
-    images: [product1Image, product2Image, product3Image],
-    description: '優雅精緻的鑽石項鍊，完美展現女性魅力。採用高品質鑽石，精工鑲嵌，每一顆鑽石都經過精心挑選，確保閃耀動人。適合各種場合佩戴，是您珠寶收藏中的必備單品。',
+    images: [product1Image, product2Image, product3Image, product4Image, product5Image],
+    description: '🌙三戴式星月吊飾項鍊🌟精緻雙層設計，結合細緻的paperclip與curb鍊條，搭配月亮與北極星指南針吊飾，點綴閃耀小水晶，為日常造型增添一抹靈動光彩。一條項鍊，三種戴法，隨心轉換風格：✨ 雙層佩戴 – 上層13吋curb鍊搭配水晶吊飾與中央指南針星星，下層16吋paperclip鍊點綴月亮與星星，展現層次魅力。🌟 單層馬銜鍊佩戴 – 簡約清爽的水晶與指南針星星吊飾，獨立成為精緻焦點。🌙 單層迴紋針鍊佩戴 – 月亮與指南針星星輕巧點綴，自然優雅，適合日常穿搭。從層次疊戴到極簡單鍊，輕鬆變換氣質，展現個人風格。',
     inStock: true,
-    sizes: ['S', 'M', 'L'],
-    colors: [
-      { name: '金色', value: '#D4AF37' },
-      { name: '銀色', value: '#C0C0C0' },
-      { name: '玫瑰金', value: '#E8B4B8' }
-    ],
+    sizes: ['18K', '316L 鈦鋼'],
     features: [
-      '高品質鑽石鑲嵌',
-      '精工製作工藝',
-      '多種尺寸選擇',
-      '精美包裝禮盒',
-      '終身保固服務'
+      '材質：18k，316L鈦鋼',
+      '重量：約12g',
+      '鍊長：13"（上層 馬銜鍊）+ 16"（下層 迴紋針鍊）+ 3" 延長鍊',
+      '鍊寬：約 2.5 mm',
+      '吊飾: 月亮與指南針星星，鑲嵌清澈水晶',
+      '配戴方式: 三種變化式佩戴'
     ]
   },
   {
     id: 2,
-    name: '珍珠手鍊',
-    category: '手鍊',
-    price: 1200,
-    image: product2Image,
-    images: [product2Image, product1Image, product4Image],
-    description: '經典珍珠手鍊，適合日常佩戴。選用優質珍珠，圓潤光澤，搭配精緻的鏈條設計，展現優雅氣質。',
+    name: '18K 金 PVD 不鏽鋼珍珠與圓片疊戴吊飾項鍊',
+    category: '項鍊',
+    price: 650,
+    image: product7Image,
+    images: [product7Image, product8Image, product9Image, product10Image],
+    description: ' ✨秀氣與時尚一次擁有✨兩條人氣鍊型優雅疊搭，點綴光澤珍珠與簡約圓片墜飾，輕鬆為日常穿搭增添層次感與亮點。採用 18K 金 PVD 不鏽鋼 製作，防水、不褪色、低敏設計，從日常到約會都能自在配戴。經典百搭，輕奢質感，絕對是珠寶收藏中的亮眼單品。',
     inStock: true,
-    sizes: ['S', 'M', 'L'],
-    colors: [
-      { name: '白色', value: '#FFFFFF' },
-      { name: '粉色', value: '#F8BBD9' }
-    ],
+    sizes: ['18K', '316L 鈦鋼'],
     features: [
-      '天然珍珠製作',
-      '經典設計風格',
-      '舒適佩戴體驗',
-      '精美包裝'
+      '鍊長：15"與 18"+ 2" 延長鍊',
+      '鍊寬：約1.5 mm',
+      '圓形吊墜尺寸：約10mm x 10mm',
+      '重量：約 5.61g'
     ]
   },
   {
     id: 3,
-    name: '時尚戒指',
-    category: '戒指',
-    price: 800,
-    image: product3Image,
-    images: [product3Image, product5Image, product6Image],
-    description: '簡約時尚的戒指設計，適合日常佩戴。精工製作，細節精緻，展現個人品味。',
+    name: '不鏽鋼 Figaro 鍊條項鍊 ',
+    category: '項鍊',
+    price: 450,
+    image: product11Image,
+    images: [product11Image, product12Image, product13Image, product14Image, product15Image, product16Image, product17Image],
+    description: '經典不敗，百搭必備不管是日常穿搭還是正式場合，Stainless Steel Figaro Chain Necklace 都能輕鬆駕馭。俐落的線條、平滑的鍊身設計，讓你一戴上就展現簡約時尚的魅力！🔗 不挑衣服的百搭單品🔗 永不過時的 Figaro 鍊設計🔗 質感不鏽鋼，耐看又耐戴風格說明｜這款項鍊是兼具時尚與實用性的百搭單品，不論單獨配戴或搭配其他項鍊疊戴，都能輕鬆打造俐落造型。適合日常穿搭，也能為正式場合增添質感細節設計特色｜經典 Figaro 鍊設計，結合短鏈與長鏈的節奏感，展現低調中的個性風格扁平鍊身設計，貼合頸部與胸口，佩戴舒適不易翻轉耐磨抗褪色的不鏽鋼材質，適合日常配戴',
     inStock: true,
-    sizes: ['6', '7', '8', '9', '10'],
-    colors: [
-      { name: '金色', value: '#D4AF37' },
-      { name: '銀色', value: '#C0C0C0' }
-    ],
+    sizes: ['鍊寬3mm 鍊長18inch', '鍊寬12mm 鍊長20inch'],
     features: [
-      '簡約時尚設計',
-      '多種尺寸選擇',
-      '精工製作',
-      '舒適佩戴'
+      '材質：316L 鈦鋼',
+      '顏色：鈦鋼色',
+      '重量：約8g',
+      '鍊長：20',
+      '鍊寬(mm)：3 / 12'
     ]
   },
   {
     id: 4,
-    name: '優雅耳環',
-    category: '耳環',
-    price: 600,
-    image: product4Image,
-    images: [product4Image, product2Image, product1Image],
-    description: '精緻優雅的耳環，增添女性氣質。設計精美，適合各種場合佩戴。',
-    inStock: false,
-    sizes: ['均碼'],
-    colors: [
-      { name: '金色', value: '#D4AF37' },
-      { name: '銀色', value: '#C0C0C0' }
-    ],
-    features: [
-      '優雅設計',
-      '精工製作',
-      '舒適佩戴',
-      '精美包裝'
-    ]
-  },
-  {
-    id: 5,
-    name: '精緻手腳鍊',
-    category: '手腳鍊',
-    price: 900,
-    image: product5Image,
-    images: [product5Image, product3Image, product6Image],
-    description: '精美的手腳鍊，展現獨特品味。設計精巧，適合日常佩戴。',
+    name: ' 18K金PVD不鏽鋼愛心吊飾扣頭迴紋針項鍊｜2色',
+    category: '項鍊',
+    price: 1300,
+    image: product18Image,
+    images: [product18Image, product19Image, product20Image, product21Image, product22Image, product23Image],
+    description: ' 完美演繹吊飾項鍊趨勢，這款可開式 Carabiner Charm Keeper 讓妳輕鬆打造專屬造型。搭配 18 吋的 迴紋針鍊條，串起 Love 字母吊飾、閃亮鑲石吊飾，以及 太陽光芒心型吊飾，每個細節都精緻動人，展現現代愛意與自信。🔓 可自由增減吊飾，天天都有不同風格✨ 不鏽鋼 & 18K 金PVD 版本可選，耐磨不褪色💫 適合疊戴，也可單戴成為注目焦點讓這條項鍊陪妳展現風格態度，優雅與時尚從細節開始',
     inStock: true,
-    sizes: ['S', 'M', 'L'],
-    colors: [
-      { name: '金色', value: '#D4AF37' },
-      { name: '銀色', value: '#C0C0C0' }
-    ],
+    sizes: ['18K', '316L 鈦鋼'],
     features: [
-      '獨特設計',
-      '精工製作',
-      '多種尺寸',
-      '舒適佩戴'
-    ]
-  },
-  {
-    id: 6,
-    name: '精選商品',
-    category: '精選商品',
-    price: 1500,
-    originalPrice: 2000,
-    discount: 25,
-    image: product6Image,
-    images: [product6Image, product1Image, product3Image],
-    description: '精選特惠商品，限時優惠。高品質材料，精工製作，性價比極高。',
-    inStock: true,
-    sizes: ['均碼'],
-    colors: [
-      { name: '金色', value: '#D4AF37' },
-      { name: '銀色', value: '#C0C0C0' }
-    ],
-    features: [
-      '限時特惠',
-      '高品質材料',
-      '精工製作',
-      '精美包裝'
+      '材質：316L 鈦鋼',
+      '顏色：鈦鋼色  18k金',
+      '鍊長：18"+2" 延長鏈',
+      '迴紋針鍊寬：4mm',
+      '重量：約11g'
     ]
   }
 ])

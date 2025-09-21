@@ -29,11 +29,23 @@
                 <option value="anklet">手腳鍊</option>
               </select>
             </div>
+              <!-- 子分類篩選 -->
+             <div class="filter-group">
+              <label class="filter-label">子分類</label>
+              <select v-model="selectedCategory" @change="filterProducts" class="filter-select">
+                <option value="">全部商品</option>
+                <option value="necklace">雙層項鍊</option>
+                <option value="bracelet">鍊式項鍊</option>
+                <option value="ring">長項鍊</option>
+                <option value="earring">頸鍊與鎖骨鍊</option>
+                <option value="anklet">扣環項鍊</option>
+              </select>
+            </div>
 
             <!-- 價格篩選 -->
             <div class="filter-group">
               <label class="filter-label">價格範圍</label>
-              <select v-model="selectedPriceRange" @change="filterProducts" class="filter-select">
+              <select  class="filter-select">
                 <option value="">全部價格</option>
                 <option value="0-1000">$0 - $1,000</option>
                 <option value="1000-3000">$1,000 - $3,000</option>
@@ -56,6 +68,7 @@
         </div>
       </section>
 
+      
       <!-- 商品網格 -->
       <section class="products-section">
         <div class="container">
@@ -110,12 +123,10 @@ import Footer from '../components/Footer.vue'
 const router = useRouter()
 
 // 導入商品圖片
-import product1Image from '../assets/img/02.banner/CHN0079-1.jpg'
-import product2Image from '../assets/img/02.banner/mama1.jpg'
-import product3Image from '../assets/img/02.banner/R1004-1.jpg'
-import product4Image from '../assets/img/02.banner/CHN0079-2.jpg'
-import product5Image from '../assets/img/02.banner/BRJ1053 model.jpg'
-import product6Image from '../assets/img/02.banner/BRJ9080.jpg'
+import product1Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
+import product2Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/112/112a.webp'
+import product3Image from '../assets/img/04.商品圖片/100項鍊/120鍊式項鍊/121/121a.webp'
+import product4Image from '../assets/img/04.商品圖片/100項鍊/150扣環項鍊/151/151a.webp'
 
 // 篩選和排序狀態
 const selectedCategory = ref('')
@@ -126,58 +137,38 @@ const sortBy = ref('newest')
 const products = ref([
   {
     id: 1,
-    name: '精緻鑽石項鍊',
+    name: '三戴式18K金 PVD不鏽鋼星月吊飾可轉換項鍊',
     category: '項鍊',
-    price: 2500,
-    originalPrice: 3000,
+    price: 1800,
     image: product1Image,
     description: '優雅精緻的鑽石項鍊，完美展現女性魅力',
     inStock: true
   },
   {
     id: 2,
-    name: '珍珠手鍊',
-    category: '手鍊',
-    price: 1200,
+    name: '18K 金 PVD 不鏽鋼珍珠與圓片疊戴吊飾項鍊不鏽鋼',
+    category: '項鍊',
+    price: 650,
     image: product2Image,
     description: '經典珍珠手鍊，適合日常佩戴',
     inStock: true
   },
   {
     id: 3,
-    name: '時尚戒指',
-    category: '戒指',
-    price: 800,
+    name: 'Figaro 鍊條項鍊',
+    category: '項鍊',
+    price: 450,
     image: product3Image,
     description: '簡約時尚的戒指設計',
     inStock: true
   },
   {
     id: 4,
-    name: '優雅耳環',
-    category: '耳環',
-    price: 600,
+    name: '18K金PVD不鏽鋼愛心吊飾扣頭迴紋針項鍊',
+    category: '項鍊',
+    price: 1300,
     image: product4Image,
     description: '精緻優雅的耳環，增添女性氣質',
-    inStock: true
-  },
-  {
-    id: 5,
-    name: '精緻手腳鍊',
-    category: '手腳鍊',
-    price: 900,
-    image: product5Image,
-    description: '精美的手腳鍊，展現獨特品味',
-    inStock: true
-  },
-  {
-    id: 6,
-    name: '精選商品',
-    category: '精選商品',
-    price: 1500,
-    originalPrice: 2000,
-    image: product6Image,
-    description: '精選特惠商品，限時優惠',
     inStock: true
   }
 ])
