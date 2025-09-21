@@ -79,22 +79,22 @@
             <div class="contact-item">
               <i class="pi pi-phone"></i>
               <div>
-                <h3>電話</h3>
-                <p>+886-2-1234-5678</p>
+                <h3>聯絡電話</h3>
+                <p>0983533891</p>
               </div>
             </div>
             <div class="contact-item">
               <i class="pi pi-envelope"></i>
               <div>
-                <h3>信箱</h3>
-                <p>wholesale@jhuangshih.com</p>
+                <h3>電子信箱</h3>
+                <p>wendychen1988@gmail.com</p>
               </div>
             </div>
             <div class="contact-item">
               <i class="pi pi-clock"></i>
               <div>
                 <h3>營業時間</h3>
-                <p>週一至週五 9:00-18:00</p>
+                <p>週一至週五 10:00-18:00</p>
               </div>
             </div>
           </div>

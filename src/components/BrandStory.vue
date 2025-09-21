@@ -4,11 +4,11 @@
       <!-- 品牌故事區域 -->
       <div class="brand-content">
         <div class="brand-text">
-          <h2 class="brand-title">精緻工藝，傳承經典</h2>
+          <h2 class="brand-title">「妝飾」精選美國質感設計飾品</h2>
           <p class="brand-subtitle">每一件珠寶都承載著獨特的故事</p>
           <div class="brand-description">
-            <p>我們致力於創造永恆的美麗，每一件作品都經過精心設計與手工製作，融合傳統工藝與現代美學，為您呈現最純粹的珠寶藝術。</p>
-            <p>從選材到成品，我們堅持最高標準，確保每一件珠寶都能成為您珍貴的收藏，見證人生中的重要時刻。</p>
+            <p>我們相信，最美的飾品，是能讓您感到自信、從容做自己的那一件。</p>
+            <p>讓我們為您的日常風格，畫上最完美的句點。</p>
           </div>
         </div>
         <div class="brand-image">
@@ -56,7 +56,7 @@ import brandImage from '../assets/img/02.banner/CHN0079-1.jpg'
 }
 
 .brand-title {
-  font-size: 3rem;
+  font-size: 38px;
   font-weight: 300;
   color: $text-dark;
   margin: 0 0 1rem 0;
