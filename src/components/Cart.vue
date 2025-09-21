@@ -108,23 +108,22 @@ watch(() => props.isOpen, (isOpen) => {
 // 購物車數據 (模擬數據)
 // 導入圖片資源
 import cartItem1Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/111/111a.webp'
-import cartItem2Image from '../assets/img/04.商品圖片/200手鍊/240珍珠-晶石手鍊/241/241a.webp'
+import cartItem2Image from '../assets/img/04.商品圖片/100項鍊/110雙層項鍊/112/112a.webp'
 
 const cartItems = ref([
   {
     id: 1,
-    name: '精緻鑽石項鍊',
-    category: '項鍊系列',
-    price: 15800,
-    originalPrice: 19800,
+    name: '三戴式18K金 PVD不鏽鋼星月吊飾可轉換項鍊',
+    category: '項鍊',
+    price: 1800,
     quantity: 1,
     image: cartItem1Image
   },
   {
     id: 2,
-    name: '優雅珍珠手鍊',
-    category: '手鍊系列',
-    price: 8900,
+    name: '18K 金 PVD 不鏽鋼珍珠與圓片疊戴吊飾項鍊',
+    category: '項鍊',
+    price: 650,
     quantity: 2,
     image: cartItem2Image
   }

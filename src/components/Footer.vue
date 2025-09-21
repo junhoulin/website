@@ -24,8 +24,8 @@
         <div class="footer-section">
           <h4 class="footer-title">關於我們</h4>
           <ul class="footer-links">
-            <li><a href="">聯絡我們</a></li>
             <li><a href="">品牌聯絡人：Wendy</a></li>
+            <li><a href="">聯絡電話：0983533891</a></li>
             <li><a href="">電子信箱：wendychen1988@gmail.com</a></li>
             <li><a href="">營業時間：週一至週五 10:00-18:00</a></li>
           </ul>

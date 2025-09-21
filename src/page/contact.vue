@@ -25,32 +25,24 @@
                   <i class="pi pi-phone"></i>
                   <div class="contact-details">
                     <h3>電話</h3>
-                    <p>+886-2-1234-5678</p>
-                    <span>週一至週五 9:00-18:00</span>
+                    <p>0983533891</p>
+                    <span>24小時內回覆</span>
                   </div>
                 </div>
                 <div class="contact-item">
                   <i class="pi pi-envelope"></i>
                   <div class="contact-details">
                     <h3>信箱</h3>
-                    <p>info@jhuangshih.com</p>
+                    <p>wendychen1988@gmail.com</p>
                     <span>24小時內回覆</span>
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <i class="pi pi-map-marker"></i>
-                  <div class="contact-details">
-                    <h3>地址</h3>
-                    <p>台北市信義區信義路五段7號</p>
-                    <span>101大樓 35樓</span>
                   </div>
                 </div>
                 <div class="contact-item">
                   <i class="pi pi-clock"></i>
                   <div class="contact-details">
                     <h3>營業時間</h3>
-                    <p>週一至週五 9:00-18:00</p>
-                    <span>週六 10:00-16:00</span>
+                    <p>週一至週五 10:00-18:00</p>
+                    <span>24小時內回覆</span>
                   </div>
                 </div>
               </div>
