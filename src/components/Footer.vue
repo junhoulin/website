@@ -12,7 +12,7 @@
           </p>
         </div>
         <div class="footer-section">
-          <h4 class="footer-title">客服服務</h4>
+          <h4 class="footer-title">客戶服務</h4>
           <ul class="footer-links">
             <li><a href="#shipping">運送資訊</a></li>
             <li><a href="#returns">退換貨政策</a></li>
