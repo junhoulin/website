@@ -169,9 +169,10 @@ const removeItem = (itemId) => {
 }
 
 const checkout = () => {
-  // 結帳邏輯
-  console.log('前往結帳')
+  // 跳轉到結帳頁面
   closeCart()
+  // 使用 router 跳轉到結帳頁面
+  window.location.href = '/website/checkout'
 }
 </script>
 

@@ -17,8 +17,12 @@
       <section class="brand-story-section">
         <div class="container">
           <div class="story-content">
+            <!-- 手機版：圖片顯示在上方 -->
+            <div class="story-image mobile-only">
+              <img src="../assets/img/01.logo/logo.png" alt="品牌故事" class="brand-image">
+            </div>
+            
             <div class="story-text">
-              <h2 class="section-title">品牌故事</h2>
               <p class="story-description">
                 「妝飾」始於一份對「美」的執著。
               </p>
@@ -32,7 +36,9 @@
                 「妝飾」精選的每一件作品，都承載著讓您「更喜歡自己」的期待。我們期盼成為您信賴的夥伴，在您追求美好生活的路上，用恰到好處的點綴，為您的獨特風格與生活態度，留下最閃亮的註腳。
               </p>
             </div>
-            <div class="story-image">
+            
+            <!-- 桌面版：圖片顯示在右側 -->
+            <div class="story-image desktop-only">
               <img src="../assets/img/01.logo/logo.png" alt="品牌故事" class="brand-image">
             </div>
           </div>
@@ -421,6 +427,25 @@ import Footer from '../components/Footer.vue'
       border-radius: 8px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
+  }
+}
+
+// 手機版和桌面版顯示控制
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  
+  .desktop-only {
+    display: none;
   }
 }
 
