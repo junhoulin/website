@@ -171,8 +171,8 @@ const removeItem = (itemId) => {
 const checkout = () => {
   // 跳轉到結帳頁面
   closeCart()
-  // 使用 router 跳轉到結帳頁面
-  window.location.href = '/website/checkout'
+  // 使用 hash 模式跳轉到結帳頁面
+  window.location.href = '#/checkout'
 }
 </script>
 
